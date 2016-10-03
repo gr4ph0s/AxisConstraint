@@ -200,7 +200,7 @@ Bool SnapTool::MouseInput(BaseDocument* doc, BaseContainer& data, BaseDraw* bd, 
 				PointObject*	pobj = ToPoint(op);
 				BaseSelect* bs = pobj->GetPointS();
 
-				Vector currentObjPos = op->GetAbsPos();
+				Vector currentObjPos = op->GetMg().off;
 
 				const Vector* pts = pobj->GetPointR();
 				Vector* points = pobj->GetPointW();
