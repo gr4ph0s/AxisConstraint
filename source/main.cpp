@@ -5,7 +5,7 @@
 
 Bool PluginStart(void)
     {
-    if (!RegisterSnapTool())
+    if (!RegisterGraphAxisConstraint())
         return false;
 
     return true;

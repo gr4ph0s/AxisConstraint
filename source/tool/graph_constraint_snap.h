@@ -4,14 +4,14 @@
 #include "c4d.h"
 #include "c4d_snapdata.h"
 
-#define ID_GRAPH_SNAPTOOL 1038076
+#define ID_GRAPH_AXIS_CONSTRAINT 1038076
 
 class AxisConstraint : public DescriptionToolData
 {
 public:
                             AxisConstraint();
     virtual                 ~AxisConstraint();
-    Int32                 	GetToolPluginId() { return ID_GRAPH_SNAPTOOL; }
+    Int32                 	GetToolPluginId() { return ID_GRAPH_AXIS_CONSTRAINT; }
     Int32					GetState(BaseDocument* doc);
     Bool					GetCursorInfo(BaseDocument* doc, BaseContainer& data, BaseDraw* bd, Float x, Float y, BaseContainer& bc);
     const String			GetResourceSymbol() { return String("graph_constraint_snap"); }

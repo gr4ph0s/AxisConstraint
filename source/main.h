@@ -4,7 +4,7 @@
 #include "c4d_basedocument.h"
 
 
-Bool RegisterSnapTool();
+Bool RegisterGraphAxisConstraint();
 
 
 

@@ -273,7 +273,7 @@ void AxisConstraint::FreeTool(BaseDocument* doc, BaseContainer& data)
     _snap = nullptr;
 }
 
-Bool RegisterSnapTool()
+Bool RegisterGraphAxisConstraint()
 {
-return RegisterToolPlugin(ID_GRAPH_SNAPTOOL, "Axis Constraint Tool", 0, AutoBitmap("snapXYZ.png"), "Axis Constraint Tool", NewObjClear(AxisConstraint));
+return RegisterToolPlugin(ID_GRAPH_AXIS_CONSTRAINT, "Axis Constraint Tool", 0, AutoBitmap("snapXYZ.png"), "Axis Constraint Tool", NewObjClear(AxisConstraint));
 }
