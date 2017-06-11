@@ -42,7 +42,7 @@
 		1BF496801EED753000C11FF5 /* graph_constraint_snap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = graph_constraint_snap.cpp; path = source/tool/graph_constraint_snap.cpp; sourceTree = SOURCE_ROOT; };
 		1BF496811EED753000C11FF5 /* graph_constraint_snap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graph_constraint_snap.h; path = source/tool/graph_constraint_snap.h; sourceTree = SOURCE_ROOT; };
 		8ACD68381C66E7D100F34089 /* sanitizerbase.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = sanitizerbase.xcconfig; path = ../../frameworks/settings/sanitizerbase.xcconfig; sourceTree = "<group>"; };
-		A08C5CDEA3A66833397B0000 /* cinema4dsdk.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = cinema4dsdk.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		A08C5CDEA3A66833397B0000 /* graph_constraint_snap.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = graph_constraint_snap.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0A668333900000000000000 /* debugbase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = debugbase.xcconfig; path = ../../frameworks/settings/debugbase.xcconfig; sourceTree = SOURCE_ROOT; };
 		A0A668333900000000050000 /* releasebase.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = releasebase.xcconfig; path = ../../frameworks/settings/releasebase.xcconfig; sourceTree = SOURCE_ROOT; };
 		A0A66833391837B5E7000000 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = main.h; path = source/main.h; sourceTree = SOURCE_ROOT; };
@@ -93,7 +93,7 @@
 		A0A668333900000000230000 /* products */ = {
 			isa = PBXGroup;
 			children = (
-				A08C5CDEA3A66833397B0000 /* cinema4dsdk.dylib */,
+				A08C5CDEA3A66833397B0000 /* graph_constraint_snap.dylib */,
 			);
 			name = products;
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 			);
 			name = cinema4dsdk;
 			productName = cinema4dsdk;
-			productReference = A08C5CDEA3A66833397B0000 /* cinema4dsdk.dylib */;
+			productReference = A08C5CDEA3A66833397B0000 /* graph_constraint_snap.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -250,7 +250,7 @@
 				DEPLOYMENT_LOCATION = YES;
 				EXECUTABLE_EXTENSION = dylib;
 				INSTALL_PATH = /.;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = graph_constraint_snap;
 			};
 			name = UnitySanitize;
 		};
@@ -273,7 +273,7 @@
 				DEPLOYMENT_LOCATION = YES;
 				EXECUTABLE_EXTENSION = dylib;
 				INSTALL_PATH = /.;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = graph_constraint_snap;
 			};
 			name = Sanitize;
 		};
@@ -307,7 +307,7 @@
 				DEPLOYMENT_LOCATION = YES;
 				EXECUTABLE_EXTENSION = dylib;
 				INSTALL_PATH = /.;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = graph_constraint_snap;
 			};
 			name = Debug;
 		};
@@ -317,7 +317,7 @@
 				DEPLOYMENT_LOCATION = YES;
 				EXECUTABLE_EXTENSION = dylib;
 				INSTALL_PATH = /.;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = graph_constraint_snap;
 			};
 			name = Release;
 		};

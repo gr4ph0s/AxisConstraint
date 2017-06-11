@@ -2,7 +2,6 @@
 #include <string.h>
 #include "main.h"
 
-
 Bool PluginStart(void)
     {
     if (!RegisterGraphAxisConstraint())

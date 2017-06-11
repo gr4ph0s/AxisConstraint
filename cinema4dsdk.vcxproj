@@ -18,6 +18,7 @@
     <ProjectGuid>{21895B69-DE91-7035-0009-38CB8C5CDEA3}</ProjectGuid>
     <RootNamespace>maxon</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>graph_constraint_snap</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
