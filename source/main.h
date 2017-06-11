@@ -7,4 +7,5 @@
 Bool RegisterSnapTool();
 
 
+
 #endif // MAIN_H__

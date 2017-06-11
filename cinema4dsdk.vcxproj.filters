@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{21895B69-DE91-7035-0000-0000CA90681B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\tool">
+      <UniqueIdentifier>{21895B69-DE91-7035-0159-A958FACA4CB9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tool\graph_constraint_snap.cpp">
+      <Filter>source\tool</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\main.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tool\graph_constraint_snap.h">
+      <Filter>source\tool</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
