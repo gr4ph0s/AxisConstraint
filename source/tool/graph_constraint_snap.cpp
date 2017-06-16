@@ -18,6 +18,18 @@ AxisConstraint::~AxisConstraint()
     _snap = nullptr;
 }
 
+Bool AxisConstraint::isShiftPressed(EditorWindow* win)
+    {
+    AutoNew<BaseContainer> kb_state;
+    if (!win->BfGetInputEvent(BFM_INPUT_KEYBOARD, kb_state))
+        return false;
+
+    if (kb_state->GetInt32(BFM_INPUT_QUALIFIER) & QSHIFT)
+        return true;
+    else
+        return false;
+    }
+
 void AxisConstraint::InitDefaultSettings(BaseDocument* doc, BaseContainer& data)
 {
     DescriptionToolData::InitDefaultSettings(doc, data);
@@ -143,7 +155,7 @@ void AxisConstraint::InitDefaultSettings(BaseDocument* doc, BaseContainer& data)
         snapResul = SnapResult();
         destPos = bd->SW(Vector(mouseX, mouseY, bd->WS(startPos).z));
 
-        if (_snap->Snap(destPos, snapResul, SNAPFLAGS_IGNORE_SELECTED) && snapResul.snapmode != NOTOK)
+        if (_snap->Snap(destPos, snapResul, SNAPFLAGS_0) && snapResul.snapmode != NOTOK)
         {
             // If mouse dont move we check if we need to select or not
             if (dx == 0.0 && dy == 0.0)
@@ -151,34 +163,22 @@ void AxisConstraint::InitDefaultSettings(BaseDocument* doc, BaseContainer& data)
                 // if we are in point snap mode
                 if (snapResul.snapmode == SNAPMODE_POINT){
 
+                    PointObject* pobj = ToPoint(snapResul.target);
+                    BaseSelect* bs = pobj->GetPointS();
+
                     // if the target object is selected
                     if (objSelectedList->Find(snapResul.target) != NOTOK)
                     {
-                        BaseContainer* kb_state = NewObjClear(BaseContainer);
-                        if (!win->BfGetInputEvent(BFM_INPUT_KEYBOARD, kb_state))
-                            _shift = false;
-
-                        if (kb_state->GetInt32(BFM_INPUT_QUALIFIER) & QSHIFT)
-                            _shift = true;
-                        else
-                            _shift = false;
-
-                        PointObject* pobj = ToPoint(snapResul.target);
-                        BaseSelect* bs = pobj->GetPointS();
-
-                        if (_shift)
-                        {
+                        if (this->isShiftPressed(win))
                             bs->Toggle(snapResul.component);
-                        }
                         else
-                        {
+                            {
                             bs->DeselectAll();
                             bs->Select(snapResul.component);
-                        }
-
-                        DrawViews(DRAWFLAGS_ONLY_ACTIVE_VIEW | DRAWFLAGS_NO_THREAD | DRAWFLAGS_NO_ANIMATION);
+                            }
                     }
                 }
+                DrawViews(DRAWFLAGS_ONLY_ACTIVE_VIEW | DRAWFLAGS_NO_THREAD | DRAWFLAGS_NO_ANIMATION);
                 continue;
             }
 
@@ -257,7 +257,10 @@ void AxisConstraint::InitDefaultSettings(BaseDocument* doc, BaseContainer& data)
     }
 
     if (win->MouseDragEnd() == MOUSEDRAGRESULT_ESCAPE)
+        {
+        GePrint("undo");
         doc->DoUndo();
+        }
 
     // flush dynamc guides to clean the screen
     _snap->FlushInferred();
