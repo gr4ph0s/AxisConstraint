@@ -3,7 +3,7 @@ A Cinema 4D tool plugin for snap with axis limitation
 
 Preview
 -----
-https://vimeo.com/221137218
+https://vimeo.com/221931360
 
 Download
 -----
