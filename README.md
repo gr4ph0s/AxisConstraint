@@ -14,6 +14,3 @@ Installation
 -----
 Copy / Paste in your Cinema 4D plugin
 
-Compatibility
------
-Windows and Mac R16 + (Tested on R17/18 win/mac)
